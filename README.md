@@ -1,1 +1,53 @@
-# rubb
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目利润计算器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="number"] {
+            width: 100px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>项目利润计算器</h1>
+    <label for="cost">工程成本：</label>
+    <input type="number" id="cost" value="6">
+    <br><br>
+    <label for="sales">燃气销售：</label>
+    <input type="number" id="sales" value="8">
+    <br><br>
+    <button onclick="calculateProfit()">计算</button>
+    <div id="result"></div>
+
+    <script>
+        function calculateProfit() {
+            // 获取输入值
+            const cost = parseFloat(document.getElementById('cost').value);
+            const sales = parseFloat(document.getElementById('sales').value);
+
+            // 计算利润
+            const profit = sales - cost;
+
+            // 显示结果
+            document.getElementById('result').innerText = `项目利润为：${profit}`;
+        }
+    </script>
+</body>
+</html>
